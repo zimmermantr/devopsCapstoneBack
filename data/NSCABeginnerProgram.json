@@ -1,0 +1,661 @@
+[
+    {  
+        "model": "workout_program_app.Workout_Program",
+        "pk":2,
+        "fields":{
+            "program_name": "NSCA Beginner Program",
+            "program_details": "12 week beginner program. A total-body workout that should be performed 2-3 days per week.",
+            "program_difficulty": "beginner",
+            "program_duration": "12 weeks",
+            "frequency_per_week": 2
+        }
+    },
+    {
+        "model": "workout_app.Workout",
+        "pk": 4,
+        "fields": {
+            "created_by": 1,
+            "workout_name": "Weeks 1-4",
+            "workout_details": "During the first month of strength training, workouts should include 1 to 3 sets of each of the 10 to 12 different exercises with a one-minute rest between exercises. Perform the exercises using a moderate weight. Beginners with a very low level of fitness may need to get in shape before participating in a strength training program that maximizes gains in muscular fitness. In other words, if you have never strength trained before, additional time for muscular adaptation is recommended. For example, instead of performing 8 to 12 exercises with a moderate weight, try performing 4 to 6 different exercises with a light weight, and perhaps perform only 1 set per exercise. This will give you an opportunity to gain confidence in your ability to strength train. A major goal of this training phase is to learn proper form and technique on a variety of upper- and lower-body exercises while practicing training fundamentals (e.g., proper technique, controlled movements, maintaining a normal breathing pattern). Thus, an initial load of 60 to 65 percent of 1RM will allow you to be in the zone of 10 to 12 repetitions on a variety of upper- and lower-body exercises that target all the major muscle groups. Of course, you can use lighter loads when learning a new exercise or attempting to correct a flaw in exercise technique. At least one exercise for all the major muscle groups should be performed."
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 22,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Leg Extension",
+            "force": "push",
+            "sets": "2",
+            "reps": "12",
+            "difficulty": "beginner",
+            "equipment": "machine",
+            "instructions": "MACHINE SETUP 1. Position the back pad so that the knee joints align with the machine's axis of rotation. 2. Adjust the starting position so that the leg pad rests in a comfortable position just above the ankles and on or directly above the shins when the knees are bent to 90 degrees. 3. Select the appropriate resistance on the weight stack. 4. Sit straight up with the back firmly against the back rest and the head in a neutral position. Grasp the handles at the sides. ACTION 5. Extend the knees in a smooth and controlled manner until they reach full extension. 6. Return to the starting position in a slow and controlled manner. Do not allow the resistance to rest on the weight stack between reps.",
+            "primary_muscle":"Quadriceps",
+            "secondary_muscle":  null,
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Leg_Extensions/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Leg_Extensions/images/1.jpg?raw=true"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 23,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Seated Leg Curl",
+            "force": "pull",
+            "sets": "2",
+            "reps": "12",
+            "difficulty": "beginner",
+            "equipment": "machine",
+            "instructions": "MACHINE SETUP 1. Position the back pad so that the knee joints align with the machine's axis of rotation. 2. Adjust the leg pad so that it is positioned just under the ankles when the knees are extended. 3. Select the appropriate resistance on the weight stack. 4. Sit straight up with the back firmly against the backrest and the head in a neutral position. Grasp the handles at the sides. ACTION 5. Bend the knees in a controlled motion to move the pad until the heels are beneath the seat and the knees are bent to about 90 degrees. 6. Return to the starting position in a slow and controlled manner. Do not allow the resistance to rest on the weight stack between reps.",
+            "primary_muscle": "hamstrings",
+            "secondary_muscle":  null,
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Seated_Leg_Curl/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Seated_Leg_Curl/images/1.jpg?raw=true"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 24,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Machine Chest Press",
+            "force": "push",
+            "sets": "2",
+            "reps": "12",
+            "difficulty": "beginner",
+            "equipment": "machine",
+            "instructions": "MACHINE SETUP 1. Adjust the seat height so that the handles are aligned at nipple height. 2. Adjust the start location for the handles so that they are just in front of the chest. 3. Select the appropriate resistance on the weight stack. 4. Grip the handles with the palms facing forward. 5. Maintain upright posture, with the spine and head against the back pad. ACTION 6. Maintaining upright posture, extend the handles outward until the elbows are fully extended. 7. Slowly return to the starting position. Do not let the resistance rest on the weight stack between reps.",
+            "primary_muscle": "Pectoralis major",
+            "secondary_muscle":  "anterior deltoid, triceps brachii",
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Machine_Bench_Press/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Machine_Bench_Press/images/1.jpg?raw=true"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 25,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Machine Seated Row",
+            "force": "pull",
+            "sets": "2",
+            "reps": "12",
+            "difficulty": "beginner",
+            "equipment": "machine",
+            "instructions": "MACHINE SETUP 1. Adjust the seat height to align the mid-chest with the top of the chest pad. 2. Adjust the chest pad to allow for full arm extension. 3. Select the appropriate resistance on the weight stack. 4. Grip the desired handles with the palms facing each other or the palms down. 5. Maintain an upright posture with the chest against the pad. ACTION 6. Pull the shoulders backward in a slow, controlled manner, squeezing the shoulder blades together at the end of the motion. 7. Slowly return to the starting position. Do not let the resistance rest on the weight stack between reps.",
+            "primary_muscle": "Latissimus dorsi, trapezius, rhomboids",
+            "secondary_muscle": null,
+            "start_img": null,
+            "end_img": null
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 26,
+        "fields":{
+        "created_by": 1,
+        "exercise_name": "Machine Biceps Curl",
+        "force": "pull",
+        "sets": "2",
+        "reps": "12",
+        "difficulty": "beginner",
+        "equipment": "machine",
+        "instructions":  "MACHINE SETUP 1. Adjust the seat height so that the backs of the upper arms rest flat on the arm pad. 2. Align the elbows with the machine's axis of rotation. 3. Select the appropriate resistance on the weight stack. 4. Rotate the handles forward and grip them firmly. 5. Maintain an upright posture, leaning forward slightly if necessary to increase stability. ACTION 6. Bend the elbows in a slow, controlled manner, curling the handles up to the shoulders until the elbows are fully bent. 7. Slowly return the handles to the starting position. Do not let the resistance rest on the weight stack between reps.",
+        "primary_muscle": "Biceps brachii",
+        "secondary_muscle": null,
+        "start_img": null,
+        "end_img": null
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 27,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Cable triceps extension",
+            "force": "push",
+            "sets": "2",
+            "reps": "12",
+            "difficulty": "beginner",
+            "equipment": "cable",
+            "instructions":  "STARTING POSITION 1. Stand in front of the machine with the elbows at the sides of the body and bent to approximately 90 degrees so that the forearms are parallel to the floor. 2. Firmly grip the handle, wrapping the thumbs around it. 3. Keep the elbows directly beneath the shoulders throughout the movement. 4. Maintain an upright posture. ACTION 5. Push down on the handle until the elbows are fully extended. Do not move the upper arm. 6. Slowly return to the starting position following the same path used for the downward movement. Do not let the resistance rest on the weight stack between reps.",
+            "primary_muscle": "Triceps brachii",
+            "secondary_muscle": null,
+            "start_img": null,
+            "end_img": null
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 28,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Back extension",
+            "force": "pull",
+            "sets": "2",
+            "reps": "12",
+            "difficulty": "beginner",
+            "equipment": "other",
+            "instructions":  "MACHINE SETUP 1. Adjust so the upper pad rest on the hips and upper thighs. 2. Position yourself in the machine so that the legs are nearly straight and the torso is approximately 90 degrees from the legs. Keep the neck and spine neutral. 3. Cross the arms over the chest. ACTION 4. Extend at the hips, raising the torso in a controlled and smooth motion until it forms a straight line with the legs. 5. Return to the starting position following the same path used for the upward movement.",
+            "primary_muscle": "Erector spinae",
+            "secondary_muscle": "hamstrings, gluteals" ,
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Hyperextensions_(Back_Extensions)/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Hyperextensions_(Back_Extensions)/images/1.jpg?raw=true"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 29,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Stability Ball Crunch",
+            "force": "pull",
+            "sets": "2",
+            "reps": "12",
+            "difficulty": "beginner",
+            "equipment": "Stability Ball",
+            "instructions":  "STARTING POSITION 1. Start in a seated position on the ball and roll forward until the middle of the back is supported on the ball, and the torso is approximately parallel to the floor. 2. Keep the feet flat on the floor and place the fingertips at each side of the head.ACTION 3. Keeping the feet flat on the floor, curl the torso upward by moving the head and shoulders until the upper back is off and the lower back remains on the ball. 4. Return to the starting position following the same path used for the upward movement.",
+            "primary_muscle": "Rectus abdominis",
+            "secondary_muscle": null ,
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Exercise_Ball_Crunch/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Exercise_Ball_Crunch/images/1.jpg?raw=truel"
+        }
+    },
+    {
+        "model": "workout_app.Workout",
+        "pk": 5,
+        "fields": {
+            "created_by": 1,
+            "workout_name": "Weeks 5-8",
+            "workout_details": "During weeks 5 through 8, the workout should become more challenging as strength and coordination improve. By varying the program variables, you start to accomplish specific goals in health and fitness, and you prevent the boredom and training plateaus that eventually lead to a lack of adherence to the program or to dropping out of the program entirely. This is a good time to think about the physical and psychosocial benefits of strength training. Although positive changes in physical abilities certainly are important, so too are the qualitative changes associated with a more active lifestyle. During this period, increase the training volume by performing 3 to 4 sets of 10 exercises at a training intensity of about 75 percent of 1RM (8-10 repetitions). Rest for about one to two minutes between sets. As additional sets are performed in the training program, continued effort will determine training outcomes. Thus, you should expect and welcome the feelings of exercise exertion. A major goal of this conditioning phase is to be confident in your exercises while maximizing training adaptations."
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 30,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Step Up",
+            "force": "push",
+            "sets": "3",
+            "reps": "10",
+            "difficulty": "beginner",
+            "equipment": "barbell",
+            "instructions": "STARTING POSITION: ATHLETE 1. Choose an appropriate box (typically about knee height) so that the knee joint is at a 90-degree angle when the foot is on the box. 2. Position the rack so that the bar is approximately at shoulderheight. 3. Facing the box, step under the bar to place it on the upper portion of the shoulders. 4. Grip the bar at a comfortable position, about a thumb's length from the knurling or slightly wider than shoulder width. 5. Lift the bar off the rack by extending the hips and knees, then step toward the box. Face the box with both feet on the ground.",
+            "primary_muscle":"quadriceps",
+            "secondary_muscle": "Gluteals, hamstrings" ,
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Barbell_Step_Ups/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Barbell_Step_Ups/images/1.jpg?raw=true"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 31,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Back Squat",
+            "force": "push",
+            "sets": "3",
+            "reps": "10",
+            "difficulty": "beginner",
+            "equipment": "Stability Ball",
+            "instructions":  "STARTING POSITION ATHLETE 1. Position the rack so that the bar is approximately at shoulder height. 2. Step under the bar to place it on the upper portion of the back and shoulders. The bar should not rest on your vertebrae. 3. Grip the bar at a comfortable position, about a thumb's length from the knurling (the rough part of the bar) or slightly wider than shoulder width. 4. Lift the bar off the rack by extending the hips and knees, then step back, placing the feet about shoulder-width apart and the toes pointed slightly outward. Keep the bar parallel to the floor and the head in a forward facing,neutral position.",
+            "primary_muscle": "Gluteals, hamstrings",
+            "secondary_muscle": "quadriceps",
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Exercise_Ball_Crunch/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Exercise_Ball_Crunch/images/1.jpg?raw=truel"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 32,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Dumbell BenchPress",
+            "force": "push",
+            "sets": "3",
+            "reps": "10",
+            "difficulty": "beginner",
+            "equipment": "dumbbell",
+            "instructions":  "STARTING POSITION: ATHLETE 1. Lie on the bench, maintaining contact with the floor and the bench at five points: both of the feet, the hips, the upper back, and the head. 2. Hold the dumbbells in each hand with the thumbs wrapped around the handles. 3. Place the dumbbells slightly to the sides of the chest at nipple level in the down position.",
+            "primary_muscle": "Pectoralis major",
+            "secondary_muscle": "anterior deltoid",
+            "start_img": "",
+            "end_img": ""
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 33,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Dumbbell upright row",
+            "force": "pull",
+            "sets": "3",
+            "reps": "10",
+            "difficulty": "beginner",
+            "equipment": "dumbbell",
+            "instructions": "STARTING POSITION 1. Stand with the feet shoulder-width apart, maintaining upright posture with the knees slightly bent. 2. Hold the arms in front of the torso with the palms facing toward the thighs and the elbows pointed outward.",
+            "primary_muscle": "Medial deltoid",
+            "secondary_muscle": "upper trapezius",
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Standing_Dumbbell_Upright_Row/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Standing_Dumbbell_Upright_Row/images/1.jpg?raw=true"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 34,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Dumbbell biceps curls",
+            "force": "pull",
+            "sets": "3",
+            "reps": "10",
+            "difficulty": "beginner",
+            "equipment": "dumbbell",
+            "instructions":  "STARTING POSITION 1. Firmly hold the dumbbells next to you with the palms facing the thighs, thumbs around the handles. ACTION 3. Raise the dumbbells in a controlled and smooth fashion by bending at the elbows until they are fully bent. As you bend the elbow, rotate the wrist so that the dumbbell rests with the palm facing the chest at the top of the movement. Squeeze the biceps at the top of the movement. 4. Lower the dumbbells, following the same path used for the upward movement, while returning the palms to their position facing the thighs. 5. Do not use momentum to get the dumbbells moving upward, and do not hyperextend the lower back to complete the lift.",
+            "primary_muscle": "Biceps brachii",
+            "secondary_muscle": null,
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Bicep_Curl/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Bicep_Curl/images/1.jpg?raw=true"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 35,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Cable triceps extension",
+            "force": "push",
+            "sets": "3",
+            "reps": "10",
+            "difficulty": "beginner",
+            "equipment": "cable",
+            "instructions":  "STARTING POSITION 1. Stand in front of the machine with the elbows at the sides of the body and bent to approximately 90 degrees so that the forearms are parallel to the floor. 2. Firmly grip the handle, wrapping the thumbs around it. 3. Keep the elbows directly beneath the shoulders throughout the movement. 4. Maintain an upright posture. ACTION 5. Push down on the handle until the elbows are fully extended. Do not move the upper arm. 6. Slowly return to the starting position following the same path used for the downward movement. Do not let the resistance rest on the weight stack between reps.",
+            "primary_muscle": "Triceps brachii",
+            "secondary_muscle":  null,
+            "start_img": null,
+            "end_img": null
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 36,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Back extension",
+            "force": "pull",
+            "sets": "3",
+            "reps": "10",
+            "difficulty": "beginner",
+            "equipment": "other",
+            "instructions":  "MACHINE SETUP 1. Adjust so the upper pad rest on the hips and upper thighs. 2. Position yourself in the machine so that the legs are nearly straight and the torso is approximately 90 degrees from the legs. Keep the neck and spine neutral. 3. Cross the arms over the chest. ACTION 4. Extend at the hips, raising the torso in a controlled and smooth motion until it forms a straight line with the legs. 5. Return to the starting position following the same path used for the upward movement.",
+            "primary_muscle": "Erector spinae",
+            "secondary_muscle": "hamstrings, gluteals",
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Hyperextensions_(Back_Extensions)/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Hyperextensions_(Back_Extensions)/images/1.jpg?raw=true"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 37,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Stability Ball Crunch",
+            "force": "pull",
+            "sets": "3",
+            "reps": "10",
+            "difficulty": "beginner",
+            "equipment": "Stability Ball",
+            "instructions":  "STARTING POSITION 1. Start in a seated position on the ball and roll forward until the middle of the back is supported on the ball, and the torso is approximately parallel to the floor. 2. Keep the feet flat on the floor and place the fingertips at each side of the head.ACTION 3. Keeping the feet flat on the floor, curl the torso upward by moving the head and shoulders until the upper back is off and the lower back remains on the ball. 4. Return to the starting position following the same path used for the upward movement.",
+            "primary_muscle": "Rectus abdominis",
+            "secondary_muscle": null ,
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Exercise_Ball_Crunch/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Exercise_Ball_Crunch/images/1.jpg?raw=truel"
+        }
+    },
+    {
+        "model": "workout_app.Workout",
+        "pk": 6,
+        "fields": {
+            "created_by": 1,
+            "workout_name": "Weeks 9-12",
+            "workout_details": "After the first eight weeks of strength training, improvements in muscular fitness will occur at a slower rate. Beginners who started strength training with great enthusiasm may become disappointed when gains in muscle strength become less dramatic during the third month of training. This is where you need to understand that a strength training workout that was effective during the first few weeks of training may not be effective in the long term. To make continual gains in muscular fitness and to achieve specific health and fitness goals, higher intensities and a more challenging training program are required (i.e., the principle of progressive overload). This is particularly important for people who want to maximize gains in muscle strength or muscle size. During this phase, perform 3 to 4 sets of 8 exercises at a training intensity of 75 to 80 percent of 1RM (6-8 repetitions). Rest about two to three minutes between sets. Although endless combinations of program variables can be used, continued improvement requires that you increase the training weight and reduce the repetitions to the lower end of the training zone once you have performed the desired number of repetitions on the last set. As a general recommendation, you should perform more sets on exercises for large muscle groups than on exercises for smaller muscle groups. However, research has shown that beginners do not experience greater strength gains when performing more than 4 sets per exercise. Therefore, any exercise should probably not be performed for longer than 4 sets."
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 38,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Step Up",
+            "force": "push",
+            "sets": "3",
+            "reps": "8",
+            "difficulty": "beginner",
+            "equipment": "barbell",
+            "instructions": "STARTING POSITION: ATHLETE 1. Choose an appropriate box (typically about knee height) so that the knee joint is at a 90-degree angle when the foot is on the box. 2. Position the rack so that the bar is approximately at shoulderheight. 3. Facing the box, step under the bar to place it on the upper portion of the shoulders. 4. Grip the bar at a comfortable position, about a thumb's length from the knurling or slightly wider than shoulder width. 5. Lift the bar off the rack by extending the hips and knees, then step toward the box. Face the box with both feet on the ground.",
+            "primary_muscle":"quadriceps",
+            "secondary_muscle": "Gluteals, hamstrings" ,
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Barbell_Step_Ups/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Barbell_Step_Ups/images/1.jpg?raw=true"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 39,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Front Squat",
+            "force": "push",
+            "sets": "3",
+            "reps": "8",
+            "difficulty": "beginner",
+            "equipment": "barbell",
+            "instructions":  "STARTING POSITION: 1. Position the rack so that the bar is approximately at shoulder height. 2. Grip the bar approximately a thumb’s length from the knurling (or slightly wider than shoulder width) and rotate the elbows upward from underneath the bar. Using the fingers to help stabilize, allow the bar to rest across the top of the shoulders and clavicle. Fully bend the elbows to position the upper arms parallel to the floor. This is referred to as the front rack position. 3. Lift the bar off the rack by extending the hips and knees. Step back, placing the feet about shoulder-width apart and the toes pointed slightly outward. ACTION: 4. Keeping the feet flat on the floor, weight distributed toward the heels, and elbows high, initiate a backward movement with the hips. 5. Allow the body to descend by flexing at the hips and knees, keeping the knees in a path that aligns with the toes. 6. As the body descends, keep an upright torso, neutral spine, and the elbows high. 7. Descend until the tops of the thighs are parallel to the floor or until thigh−calf contact (if performing a deep squat). 8. Return to the starting position using the same path used for the downward movement.",
+            "primary_muscle": "Quadriceps",
+            "secondary_muscle": "Gluteals, hamstrings",
+            "start_img": "https://raw.githubusercontent.com/wrkout/exercises.json/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Front_Barbell_Squat/images/0.jpg",
+            "end_img": "https://raw.githubusercontent.com/wrkout/exercises.json/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Front_Barbell_Squat/images/1.jpg"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 40,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Barbell bench press",
+            "force": "push",
+            "sets": "3",
+            "reps": "8",
+            "difficulty": "beginner",
+            "equipment": "barbell",
+            "instructions":  "STARTING POSITION: 1. Lie on the bench, maintaining contact with the floor and the bench at five points: both of the feet, the hips, the upper back, and the head. 2. Grip the bar with a pronated grip, the hands slightly outside of shoulder width, wrapping the thumbs around the bar. 3. Have the spotter assist with removing the bar from the rack. Support the bar over the chest in line with the nipples. ACTION: 4. Maintaining the five points of contact, lower the bar in a controlled motion until it touches the chest at the nipple line. Do not bounce the bar off the chest. 5. While pressing the bar, the upper arms should be at the sides of the body at an angle of approximately 45 degrees from the torso, and the forearms should remain perpendicular to the floor. 6. Press the barbell up to the starting position with the elbows fully extended using the same path used for the downward movement.",
+            "primary_muscle": "Pectoralis major",
+            "secondary_muscle": "anterior deltoid, triceps brachii",
+            "start_img": "https://raw.githubusercontent.com/wrkout/exercises.json/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Barbell_Bench_Press_-_Medium_Grip/images/0.jpg",
+            "end_img": "https://raw.githubusercontent.com/wrkout/exercises.json/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Barbell_Bench_Press_-_Medium_Grip/images/1.jpg"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 41,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Dumbbell upright row",
+            "force": "pull",
+            "sets": "3",
+            "reps": "8",
+            "difficulty": "beginner",
+            "equipment": "dumbbell",
+            "instructions": "STARTING POSITION 1. Stand with the feet shoulder-width apart, maintaining upright posture with the knees slightly bent. 2. Hold the arms in front of the torso with the palms facing toward the thighs and the elbows pointed outward.",
+            "primary_muscle": "Medial deltoid",
+            "secondary_muscle": "upper trapezius",
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Standing_Dumbbell_Upright_Row/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Standing_Dumbbell_Upright_Row/images/1.jpg?raw=true"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 42,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Dumbbell biceps curls",
+            "force": "pull",
+            "sets": "3",
+            "reps": "8",
+            "difficulty": "beginner",
+            "equipment": "dumbbell",
+            "instructions":  "STARTING POSITION 1. Firmly hold the dumbbells next to you with the palms facing the thighs, thumbs around the handles. ACTION 3. Raise the dumbbells in a controlled and smooth fashion by bending at the elbows until they are fully bent. As you bend the elbow, rotate the wrist so that the dumbbell rests with the palm facing the chest at the top of the movement. Squeeze the biceps at the top of the movement. 4. Lower the dumbbells, following the same path used for the upward movement, while returning the palms to their position facing the thighs. 5. Do not use momentum to get the dumbbells moving upward, and do not hyperextend the lower back to complete the lift.",
+            "primary_muscle": "Biceps brachii",
+            "secondary_muscle": null,
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Bicep_Curl/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Bicep_Curl/images/1.jpg?raw=true"
+        }
+    },
+    {   
+        "model": "exercise_app.Exercise",
+        "pk": 43,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Lying triceps extension",
+            "force": "push",
+            "sets": "3",
+            "reps": "8",
+            "difficulty": "beginner",
+            "equipment": "barbell",
+            "instructions":  "STARTING POSITION 1. Lie back on a bench and use an EZ bar to perform the movement. 2. Lie on the bench, making sure that the body makes contact with the floor and the bench at five points: both of the feet, the hips, the upper back, and the head. 3. Hold the bar with the palms facing the feet, wrapping the thumbs around the bar. 4. Have a spotter assist with placing the bar over the chest with the elbows fully extended for the starting position. ACTION: 5. Maintaining the five points of contact and keeping the upper arms stationary, bend at the elbows to slowly lower the bar toward the forehead. Do not touch the forehead. 6. Keep the movement controlled, with the elbows over the shoulders for the duration of the movement. 7. Press the bar up to the start",
+            "primary_muscle": "Triceps brachii",
+            "secondary_muscle": null,
+            "start_img": "https://raw.githubusercontent.com/wrkout/exercises.json/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/EZ-Bar_Skullcrusher/images/0.jpg",
+            "end_img": "https://raw.githubusercontent.com/wrkout/exercises.json/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/EZ-Bar_Skullcrusher/images/1.jpg"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 44,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Back extension",
+            "force": "pull",
+            "sets": "3",
+            "reps": "8",
+            "difficulty": "beginner",
+            "equipment": "other",
+            "instructions":  "MACHINE SETUP 1. Adjust so the upper pad rest on the hips and upper thighs. 2. Position yourself in the machine so that the legs are nearly straight and the torso is approximately 90 degrees from the legs. Keep the neck and spine neutral. 3. Cross the arms over the chest. ACTION 4. Extend at the hips, raising the torso in a controlled and smooth motion until it forms a straight line with the legs. 5. Return to the starting position following the same path used for the upward movement.",
+            "primary_muscle": "Erector spinae",
+            "secondary_muscle": "hamstrings, gluteals" ,
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Hyperextensions_(Back_Extensions)/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Hyperextensions_(Back_Extensions)/images/1.jpg?raw=true"
+        }
+    },
+    {
+        "model": "exercise_app.Exercise",
+        "pk": 45,
+        "fields":{
+            "created_by": 1,
+            "exercise_name": "Stability Ball Crunch",
+            "force": "pull",
+            "sets": "3",
+            "reps": "8",
+            "difficulty": "beginner",
+            "equipment": "Stability Ball",
+            "instructions":  "STARTING POSITION 1. Start in a seated position on the ball and roll forward until the middle of the back is supported on the ball, and the torso is approximately parallel to the floor. 2. Keep the feet flat on the floor and place the fingertips at each side of the head.ACTION 3. Keeping the feet flat on the floor, curl the torso upward by moving the head and shoulders until the upper back is off and the lower back remains on the ball. 4. Return to the starting position following the same path used for the upward movement.",
+            "primary_muscle": "Rectus abdominis",
+            "secondary_muscle": null ,
+            "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Exercise_Ball_Crunch/images/0.jpg?raw=true",
+            "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Exercise_Ball_Crunch/images/1.jpg?raw=truel"
+        }
+    },
+    {
+        "model": "workout_program_app.Workout_Program_workouts",
+        "fields": {
+            "workout_program": 2,
+            "workout": 4
+        }
+    },
+    {
+        "model": "workout_program_app.Workout_Program_workouts",
+        "fields": {
+            "workout_program": 2,
+            "workout": 5
+        }
+    },
+    {
+        "model": "workout_program_app.Workout_Program_workouts",
+        "fields": {
+            "workout_program": 2,
+            "workout": 6
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 4,
+            "exercise": 22
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 4,
+            "exercise": 23
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 4,
+            "exercise": 24
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 4,
+            "exercise": 25
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 4,
+            "exercise": 26
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 4,
+            "exercise": 27
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 4,
+            "exercise": 28
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 4,
+            "exercise": 29
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 5,
+            "exercise": 30
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 5,
+            "exercise": 31
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 5,
+            "exercise": 32
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 5,
+            "exercise": 33
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 5,
+            "exercise": 34
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 5,
+            "exercise": 35
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 5,
+            "exercise": 36
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 5,
+            "exercise": 37
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 6,
+            "exercise": 38
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 6,
+            "exercise": 39
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 6,
+            "exercise": 40
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 6,
+            "exercise": 41
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 6,
+            "exercise": 42
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 6,
+            "exercise": 43
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 6,
+            "exercise": 44
+        }
+    },
+    {
+        "model": "workout_app.Workout_exercises",
+        "fields": {
+            "workout": 6,
+            "exercise": 45
+        }
+    }
+]

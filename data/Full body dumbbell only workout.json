@@ -1,0 +1,606 @@
+[{  
+    "model": "workout_program_app.Workout_Program",
+    "pk":1,
+    "fields":{
+        "program_name": "Full Body Dumbbell Only Workout",
+        "program_details": "full body dumbbell only workout",
+        "program_difficulty": "beginner",
+        "program_duration": "8 weeks",
+        "frequency_per_week": 3
+    }
+},
+{
+    "model": "workout_app.Workout",
+    "pk": 1,
+    "fields": {
+        "workout_name": "Day 1",
+        "workout_details": "",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 1,
+    "fields": {
+        
+        "exercise_name": "Dumbbell squat",
+        "force": "push",
+        "sets": 3,
+        "reps": 10,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "set up for the dumbbell squat by choosing a pair of dumbbells and holding them down by your sides. stand with a slight bend in your knees and your feet around shoulder width apart. Keep your head up and your back straight. This is the starting position. Keeping your eyes facing forward slowly lower your body down. Don't lean forward as you come down. Your buttocks should come out and drop straight down. squat down as far as possible or at least until your thighs are parallel with the floor, and then slowly raise your body back up by pushing through your heels. Do not lock the knees out when you stand up, and then repeat the movement.",
+        "primary_muscle": "quads",
+        "secondary_muscle": "calves, glutes, hamstrings, lower back",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Squat/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Squat/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 2,
+    "fields": {
+        
+        "exercise_name": "Dumbbell stiff Leg Deadlift",
+        "force": "pull",
+        "sets": 3,
+        "reps": 10,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "set up for the dumbbell stiff leg deadlift by choosing a pair of dumbbells and holding them down at your sides. stand up straight with a slight bend in your knees and your feet around shoulder width apart. This is your starting position. Keep your back as straight as possible and bend over at the waist lowering the dumbbells over the tops of your feet. Your knees should be kept stationary during the movement. focus on the stretch in your hamstrings, and continue to lower the dumbbells down as far as your hamstrings will let you comfortably. Now engage the hamstrings and begin to raise the dumbbells straight back up. Your eyes should be facing up and your shoulders back. This will prevent your lower back from rounding. squeeze up through the glutes and hamstrings until you're standing straight up. Repeat for desired reps.",
+        "primary_muscle": "hamstrings",
+        "secondary_muscle": "glutes, lower back",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Stiff-Legged_Dumbbell_Deadlift/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Stiff-Legged_Dumbbell_Deadlift/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 3,
+    "fields": {
+        
+        "exercise_name": "Bent Over Dumbbell Row",
+        "force": "pull",
+        "sets": 3,
+        "reps": 10,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "Assume a standing position while holding a dumbbell in each hand with a neutral grip. Hinge forward until your torso is roughly parallel with the floor (or slightly above) and then begin the movement by driving the elbows behind the body while retracting the shoulder blades. pull the dumbbells towards your body until the elbows are at (or just past) the midline and then slowly lower the dumbbells back to the starting position under control. Repeat for the desired number of repetitions.",
+        "primary_muscle": "Upper back",
+        "secondary_muscle": "abs, biceps, lats, lower back, shoulders",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Bent_Over_Two-Dumbbell_Row/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Bent_Over_Two-Dumbbell_Row/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 4,
+    "fields": {
+        
+        "exercise_name": "Dumbbell Bench press",
+        "force": "push",
+        "sets": 3,
+        "reps": 10,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "pick up the dumbbells off the floor using a neutral grip (palms facing in). position the ends of the dumbbells in your hip crease, and sit down on the bench. To get into position, lay back and keep the weights close to your chest. Once you are in position, take a deep breath, and press the dumbbells to lockout at the top. slowly lower the dumbbells under control as far as comfortably possible (the handles should be about level with your chest). Contract the chest and push the dumbbells back up to the starting position. Repeat for the desired number of repetitions.",
+        "primary_muscle": "chest",
+        "secondary_muscle": "shoulders, triceps",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Bench_Press/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Bench_Press/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 5,
+    "fields": {
+
+        
+        "exercise_name": "Dumbbell Lateral Raise",
+        "force": "pull",
+        "sets": 2,
+        "reps": 8,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "The dumbbell lateral raise is a good exercise for building width in your upper body which gives you the 'V' shape. Grab a set of dumbbells and stand straight up with the dumbbells at your sides. Your palms should be facing your body. You should be holding the dumbbells slightly off your body, as this keeps the tension on the side delts. This is your starting position for the exercise. To execute, slowly raise the dumbbells up to around shoulder height. It's important that you do not let your wrists go above your elbows while raising the weight, as this will take the work off the side delts and put it on the front delts. pause at the top of the movement, and then slowly lower the weight back to the starting position. Do not let the dumbbells touch your body, and then raise them for the next rep ",
+        "primary_muscle": "shoulders",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Side_Lateral_Raise/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Side_Lateral_Raise/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 6,
+    "fields": {
+        
+        "exercise_name": "Standing Dumbbell Curl",
+        "force": "pull",
+        "sets": 2,
+        "reps": 8,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "Assume the starting position for the standing dumbbell curl by grasping a pair of dumbbells and standing straight up, feet together and dumbbells by your side. The dumbbells should not be touching your body. Your palms should be facing upwards. Take up the slack by bending the elbows slightly. Tension should be on the biceps. slowly curl the dumbbells up as far as possible. squeeze the biceps hard, and then slowly lower the dumbbells back down to the starting position. Repeat for desired reps.",
+        "primary_muscle": "biceps",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Bicep_Curl/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Bicep_Curl/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 7,
+    "fields": {
+        "exercise_name": "Lying Dumbbell extension",
+        "force": "push",
+        "sets": 2,
+        "reps": 8,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "Grab a pair of dumbbells and sit on the end of a flat bench with the dumbbells resting on your thighs. Lie back on the bench and extend the dumbbells above your head. The dumbbells should not be touching and you should be using a neutral grip (palms facing each other). Bending at the elbows only, keeping your elbows fixed and pointing at your hips, slowly lower the dumbbells down beside your head until they are about level with your ears. pause and squeeze the triceps. Then raise the dumbbells back to the starting position. Do not lock the elbows out, and then repeat for desired reps.",
+        "primary_muscle": "triceps",
+        "secondary_muscle": "chest, shoulders",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Lying_Dumbbell_Tricep_Extension/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Lying_Dumbbell_Tricep_Extension/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "workout_app.Workout",
+    "pk": 2,
+    "fields": {
+        
+        "workout_name": "Day 2",
+        "workout_details": "",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 8,
+    "fields": {
+        
+        "exercise_name": "Dumbbell Lunge",
+        "force": "push",
+        "sets": 3,
+        "reps": 10,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "Choose a pair of dumbbells and stand up straight with a slight bend in your knees. Hold the dumbbells down at your sides. You are now in the starting position. step forward with your left leg while maintaining your balance and squat down through your hips. Keep your torso straight and head up. Don't allow your knee to track out over your toes. push yourself back to the starting position by using your heal to drive you. Repeat this movement with your right leg and then repeat for desired reps.",
+        "primary_muscle": "quads",
+        "secondary_muscle":"calves, glutes, hamstrings",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Lunges/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Lunges/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 9,
+    "fields": {
+        
+        "exercise_name": "Dumbbell Hamstring Curl",
+        "force": "pull",
+        "sets": 3,
+        "reps": 10,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "set up for the dumbbell hamstring curl by elevating a flat bench on a block or step. You can use a grounded flat bench, but elevating it gives you a better range of motion and more efficiently recruits the hamstrings. Now choose the appropriate dumbbell and set it on the ground near the lower end of the bench. Lie face down on the bench and position yourself so that your knees are at the edge of the bench. pick up the dumbbell from the floor with your feet, securing it between the arches of your two feet. Your legs should be fully extended and you can wrap your arms around the bench for stability. This is the starting position. Bending at the knees only, slowly curl the dumbbell up towards your buttocks. Raise the dumbbell as far as comfortably possible or just past 90 degrees. pause for a moment and then lower the dumbbell in a controlled manner back to the starting position. Repeat for desired reps.",
+        "primary_muscle": "hamstrings",
+        "start_img": "",
+        "end_img": "",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 10,
+    "fields": {
+        
+        "exercise_name": "Dumbbell Deadlift",
+        "force": "pull",
+        "sets": 3,
+        "reps": 10,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "set up for the dumbbell deadlift by choosing a pair of dumbbells and placing them on the floor in front of you. stand with your feet at around shoulder width apart and position the dumbbells on the floor so that they are on either side of your feet. Reach down and grab the dumbbells with a neutral grip (palms facing inward) and drop your hips. Your hips should be in the best, most natural position for leverage so you may need to raise or lower them slightly. Make sure your eyes are looking ahead. Your body will follow your head so keep your head up and eyes forward! Be sure to keep a straight back and never allow it to round. You are now in the starting position. focus on standing up with the dumbbells - not pulling them from the floor, and lead with your head as you rise. Drive with your heals and explode upward (leading with your head) as you rise. As the dumbbells rise to knee level, thrust your hips forward and contract your back by bringing your shoulder blades back. pause here for a moment and then reverse the movement by bending at the knees while slowly lowering the weight - keeping the dumbbells under strict control on the descent. Reset your stance if necessary and repeat for desired reps.",
+        "primary_muscle": "lower back",
+        "secondary_muscle": "calves, forearms, glutes, hamstrings, middle back, quads, traps",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Stiff-Legged_Dumbbell_Deadlift/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Stiff-Legged_Dumbbell_Deadlift/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 11,
+    "fields": {
+        
+        "exercise_name": "Dumbbell Military press",
+        "force": "push",
+        "sets": 3,
+        "reps": 10,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "The standing dumbbell press is one of the most popular mass builders for the shoulders! set up for the exercise by grabbing a pair of dumbbells and standing straight up with your feet around shoulder width apart. Raise the dumbbells to shoulder height on each side, and twist so that your palms are facing forward. Keep your head up and eyes facing forward. This is the starting position for the exercise. slowly raise the dumbbells above your head until your arms are almost fully extended. Do not pause at the top of the movement, and immediately begin lowering the dumbbells back down to the starting position. Repeat this movement for the desired amount of reps.",
+        "primary_muscle": "shoulders",
+        "secondary_muscle": "triceps",
+        "start_img": "",
+        "end_img": "",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 12,
+    "fields": {
+        
+        "exercise_name": "Dumbbell flys",
+        "force": "push",
+        "sets": 2,
+        "reps": 8,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "pick up the dumbbells off the floor using a neutral grip (palms facing in). position the ends of the dumbbells in your hip crease, and sit down on the bench. To get into position, lay back and keep the weights close to your chest. Once you are in position, take a deep breath, then press the dumbbells to lockout at the top. slightly retract your shoulder blades, unlock your elbows, and slowly lower the dumbbells laterally while maintaining the angle at your elbow. Once the dumbbells reach chest level, reverse the movement by squeezing your pecs together and bringing the dumbbells back to their starting position. Without allowing the dumbbells to touch, start the next repetition, and continue until the set is completed.",
+        "primary_muscle": "chest",
+        "secondary_muscle": "shoulders, triceps",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Flyes/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Flyes/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 13,
+    "fields": {
+
+        
+        "exercise_name": "Standing Hammer Curl",
+        "force": "pull",
+        "sets": 2,
+        "reps": 8,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "The hammer curl is a great exercise for the biceps and forearms. set up by grasping a set of dumbbells and standing straight up with the dumbbells by your sides. You should be using a neutral grip, meaning your palms are facing your body. Bend your arms slightly to take tension into the biceps. Keeping your body fixed and elbows in at your sides, slowly curl the dumbbells up as far as possible. squeeze the biceps at the top of the movement, and then slowly lower the weight back to the starting position. Repeat for desired reps.",
+        "primary_muscle": "biceps",
+        "secondary_muscle": "forearms",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Hammer_Curls/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Hammer_Curls/images/1.jpg",
+        "created_by": 1 
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 14,
+    "fields": {
+        
+        "exercise_name": "Seated Dumbbell Tricep extension",
+        "force": "push",
+        "sets": 2,
+        "reps": 8,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "Select the desired weight from the rack and position an adjustable bench at 90 degrees. To get into position, sit in an upright position and lift the dumbbell to the top of your shoulder. Take a deep breath, overlap your hands around the dumbbell, then press it into position overhead. Maintain an overlapping grip and slowly lower the dumbbell behind your head by unlocking your elbows. Once your forearms reach parallel or just below, drive the dumbbell back to the starting point by extending the elbows and flexing the triceps. Repeat for the desired number of repetitions.",
+        "primary_muscle": "triceps",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Seated_Triceps_Press/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Seated_Triceps_Press/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "workout_app.Workout",
+    "pk": 3,
+    "fields": {
+        
+        "workout_name": "Day 3",
+        "workout_details": "",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 15,
+    "fields": {
+        
+        "exercise_name": "Dumbbell step Up",
+        "force": "push",
+        "sets": 3,
+        "reps": 10,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "set up for the dumbbell step up by choosing a pair of dumbbells and holding them down at your sides. stand up straight in front of a flat bench or other raised platform. Keep your eyes facing forward and a slight bend in your knees. This is the starting position. Lift your left knee and step onto the platform with your left foot. Once your foot is firmly planted on the platform, use your left heel to lift your body up and place your right foot on the platform as well. pause briefly and then step back with your right leg and carefully return to the starting position. Repeat this motion for desired reps and then repeat while leading with your right foot.",
+        "primary_muscle": "quads",
+        "secondary_muscle": "calves, glutes, hamstrings",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Step_Ups/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Dumbbell_Step_Ups/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 16,
+    "fields": {
+        
+        "exercise_name": "Dumbbell stiff Leg Deadlift",
+        "force": "pull",
+        "sets": 3,
+        "reps": 10,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "set up for the dumbbell stiff leg deadlift by choosing a pair of dumbbells and holding them down at your sides. stand up straight with a slight bend in your knees and your feet around shoulder width apart. This is your starting position. Keep your back as straight as possible and bend over at the waist lowering the dumbbells over the tops of your feet. Your knees should be kept stationary during the movement. focus on the stretch in your hamstrings, and continue to lower the dumbbells down as far as your hamstrings will let you comfortably. Now engage the hamstrings and begin to raise the dumbbells straight back up. Your eyes should be facing up and your shoulders back. This will prevent your lower back from rounding. squeeze up through the glutes and hamstrings until you're standing straight up. Repeat for desired reps.",
+        "primary_muscle": "hamstrings",
+        "secondary_muscle": "glutes, lower back",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Stiff-Legged_Dumbbell_Deadlift/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Stiff-Legged_Dumbbell_Deadlift/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 17,
+    "fields": {
+        
+        "exercise_name": "One Arm Dumbbell Row",
+        "force": "pull",
+        "sets": 3,
+        "reps": 10,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "Assume a standing position while holding a dumbbell in one hand with a neutral grip. Hinge forward until your torso is roughly parallel with the floor (or slightly above) and then begin the movement by driving the elbow behind the body while retracting the shoulder blade. pull the dumbbell towards your body until the elbow is at (or just past) the midline and then slowly lower the dumbbell back to the starting position under control. Repeat for the desired number of repetitions on both sides.",
+        "primary_muscle": "upper back",
+        "secondary_muscle": "abs, biceps, lats, shoulders",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/One-Arm_Dumbbell_Row/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/One-Arm_Dumbbell_Row/images/1.jpg",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 18,
+    "fields": {
+        
+        "exercise_name": "Reverse Grip Dumbbell Bench press",
+        "force": "push",
+        "sets": 3,
+        "reps": 10,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "set up for the exercise by grasping a set of dumbbells and sitting on the end of a flat bench with the ends of the dumbbells resting on your knees. slowly lay back on the bench and push the dumbbells straight up above your chest. Twist the dumbbells so that your palms are facing your shoulders. This is the starting position for the exercise. slowly lower the dumbbells down, keeping your palms in line with the middle of your chest. When the handles get to around chest height, pause and raise the dumbbells back to the starting position. Repeat movement for desired reps.",
+        "primary_muscle": "chest",
+        "secondary_muscle": "shoulders, triceps",
+        "start_img": "",
+        "end_img": "",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 19,
+    "fields": {
+        
+        "exercise_name": "Bent Over Dumbbell Reverse fly",
+        "force": "pull",
+        "sets": 2,
+        "reps": 8,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "Select the desired weight from the rack then take a few steps back into an open area. Hinge from the hips until your body is almost parallel to the floor and allow the arms to hang straight down from the shoulders with a neutral grip. Take a deep breath and pull the dumbbells towards the ceiling using the rear deltoids. slowly lower the dumbbells back to the starting position under control. Repeat for the desired number of repetitions.",
+        "primary_muscle": "shoulders",
+        "secondary_muscle": "traps, triceps",
+        "start_img": "",
+        "end_img": "",
+        "created_by": 1
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 20,
+    "fields": {
+        
+        "exercise_name": "Zottman Curl",
+        "force": "pull",
+        "sets": 2,
+        "reps": 8,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "Select the desired weight from the rack and assume a shoulder width stance. Using a supinated grip, take a deep breath and curl the dumbbells towards your shoulders. Once the biceps are fully shortened, rotate the forearms to a pronated position (palms down) and slowly lower the weight back to the starting position. Repeat for the desired number of repetitions.",
+        "primary_muscle": "biceps",
+        "secondary_muscle": "forearms",
+        "start_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Zottman_Curl/images/0.jpg",
+        "end_img": "https://github.com/wrkout/exercises.json/blob/cffbbc501abe63b87e7319bd61528f8146151ab4/exercises/Zottman_Curl/images/1.jpg",
+        "created_by": 1
+        
+    }
+},
+{
+    "model": "exercise_app.Exercise",
+    "pk": 21,
+    "fields": {
+        
+        "exercise_name": "Close Grip Dumbbell press/Crush press",
+        "force": "push",
+        "sets": 2,
+        "reps": 8,
+        "difficulty": "beginner",
+        "equipment": "dumbbell",
+        "instructions": "pick up the dumbbells off the floor using a neutral grip (palms facing in). position the ends of the dumbbells in your hip crease, and sit down on the bench. To get into position, lay back and keep the weights close to your chest. Once you are in position, take a deep breath, crush the dumbbells together, then press them to lockout at the top. Continue to push the dumbbells together while lowering them under control as far as comfortably possible. Once the dumbbells touch your chest, push them back to the starting position. Repeat for the desired number of repetitions.",
+        "primary_muscle": "chest",
+        "secondary_muscle": "shoulders, triceps",
+        "start_img": "",
+        "end_img": "",
+        "created_by": 1
+    }
+},
+{
+    "model": "workout_program_app.Workout_Program_workouts",
+    "fields": {
+        "workout_program": 1,
+        "workout": 1
+    }
+},
+{
+    "model": "workout_program_app.Workout_Program_workouts",
+    "fields": {
+        "workout_program": 1,
+        "workout": 2
+    }
+},
+{
+    "model": "workout_program_app.Workout_Program_workouts",
+    "fields": {
+        "workout_program": 1,
+        "workout": 3
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 1,
+        "exercise": 1
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 1,
+        "exercise": 2
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 1,
+        "exercise": 3
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 1,
+        "exercise": 4
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 1,
+        "exercise": 5
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 1,
+        "exercise": 6
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 1,
+        "exercise": 7
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 2,
+        "exercise": 8
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 2,
+        "exercise": 9
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 2,
+        "exercise": 10
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 2,
+        "exercise": 11
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 2,
+        "exercise": 12
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 2,
+        "exercise": 13
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 2,
+        "exercise": 14
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 3,
+        "exercise": 15
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 3,
+        "exercise": 16
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 3,
+        "exercise": 17
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 3,
+        "exercise": 18
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 3,
+        "exercise": 19
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 3,
+        "exercise": 10
+    }
+},
+{
+    "model": "workout_app.Workout_exercises",
+    "fields": {
+        "workout": 3,
+        "exercise": 21
+    }
+}
+]
