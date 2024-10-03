@@ -1,0 +1,13 @@
+[
+    {
+        "model": "user_app.App_user",
+        "pk": 1,
+        "fields": {
+            "email": "admin@example.com",
+            "password": "examplepassword",
+            "is_superuser": true,
+            "is_staff": true,
+            "is_active": true
+        }
+    }
+]
