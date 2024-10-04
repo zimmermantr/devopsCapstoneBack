@@ -7,7 +7,8 @@
             "program_details": "12 week beginner program. A total-body workout that should be performed 2-3 days per week.",
             "program_difficulty": "beginner",
             "program_duration": "12 weeks",
-            "frequency_per_week": 2
+            "frequency_per_week": 2,
+            "created_by": 1
         }
     },
     {
