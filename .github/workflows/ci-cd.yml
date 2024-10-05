@@ -5,102 +5,115 @@ on:
   push:
     branches: [ main ]
 
+
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
-
-  AWS_REGION: 'us-east-1'
-  K8S_NAMESPACE: 'shredder'
-  EKS_CLUSTER_NAME: 'your-eks-cluster' # FILL IN WITH PROPER NAME THROUGHOUT ENTIRE CODE
-
+  AWS_REGION: ${{ secrets.AWS_REGION }}
+  K8S_NAMESPACE: ${{ secrets.K8S_NAMESPACE }}
+  EKS_CLUSTER_NAME: ${{ secrets.EKS_CLUSTER_NAME }}
+  # AWS_REGION: 'us-east-1' #CHANGE THESE TO SECRETS AFTER CONFIRMING THAT THEY WORK
+  # K8S_NAMESPACE: 'shredder' #CHANGE THESE TO SECRETS AFTER CONFIRMING THAT THEY WORK
+  # EKS_CLUSTER_NAME: 'shredder_cluster' #CHANGE THESE TO SECRETS AFTER CONFIRMING THAT THEY WORK
+  
 jobs:
-  build:
+  backend-test:
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_DB }}
+          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+          POSTGRES_PORT:  ${{ secrets.POSTGRES_PORT }}
+          # POSTGRES_USER: postgres
+          # POSTGRES_PASSWORD: postgres
+          # POSTGRES_DB: mydb
+        ports:
+          # - 5432:5432
+          POSTGRES_PORT:  ${{ secrets.POSTGRES_PORT }}
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3  # Check out code from the repository
+
+    - name: Set up Python environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install Python dependencies
+      run: |
+        cd backend
+        python -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
 
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
+      uses: docker/setup-buildx-action@v1  # Set up Docker Buildx for multi-platform builds
 
     - name: Login to DockerHub
-      uses: docker/login-action@v1
+      uses: docker/login-action@v1  # Log in to DockerHub to push the Docker image
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and push backend Docker image
       run: |
-        docker build -t ${{ env.DOCKER_USERNAME }}/shredder_back:latest .
-        docker push ${{ env.DOCKER_USERNAME }}/shredder_back:latest
+        # Build the Docker image using the Dockerfile in the backend directory
+        # "${{ github.sha }}" is used as the image tag to ensure each image is uniquely tagged with the commit hash
+        docker build -f backend/Dockerfile -t ${{ secrets.DOCKER_USERNAME }}/shredder_back:${{ github.sha }} backend
+        docker push ${{ secrets.DOCKER_USERNAME }}/shredder_back:${{ github.sha }}
 
   deploy_eks:
-    needs: build and push
+    needs: backend-test
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      with: 
-          ref: main
+      with:
+        ref: main
 
     - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v1  # Configure AWS credentials to interact with AWS services
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}  # USING WHO'S INFO?  CAN USE MINE
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Update kubeconfig for EKS
-        run: |
-          aws eks update-kubeconfig --name your-eks-cluster --kubeconfig ./kubeconfig.yml  
-          echo "KUBECONFIG=$(pwd)/kubeconfig.yml" >> $GITHUB_ENV
-  
-      # Apply namespace first before creating any resources
-      - name: Apply namespace for EKS
-        run: kubectl apply -f k8s/shredder-name.yaml
-  
-      # Create db-secret for PostgreSQL in Kubernetes
-      - name: Create or update db-secret for PostgreSQL
-        run: |
-          kubectl apply -f - <<EOF
-          apiVersion: v1
-          kind: Secret
-          metadata:
-            name: db-secret
-            namespace: shredder
-          type: Opaque
-          data:
-            POSTGRES_USER: $(echo -n "${{ secrets.DB_USER }}" | base64)
-            POSTGRES_PASSWORD: $(echo -n "${{ secrets.DB_PASSWORD }}" | base64)
-          EOF
-  
-      # Create or update twoge-secrets for Twoge App in Kubernetes
-      - name: Create or update shredder-secrets for Shredder App
-        run: |
-          kubectl apply -f - <<EOF
-          apiVersion: v1
-          kind: Secret
-          metadata:
-            name: shredder-secrets
-            namespace: shredder
-          type: Opaque
-          data:
-            DB_USER: $(echo -n "${{ secrets.DB_USER }}" | base64)
-            DB_PASSWORD: $(echo -n "${{ secrets.DB_PASSWORD }}" | base64)
-          EOF
-  
-      # Apply StorageClass for EKS
-      - name: Apply StorageClass for EKS
-        run: kubectl apply -f k8s/shredder-storageclass.yaml -n cassandra # ADDED DURING ASSESSMENT TO SEE IF RESOLVED PVC ISSUES
-  
-      # Apply PersistentVolumeClaim (PVC) for postgres
-      - name: Apply postgres PVC
-        run: kubectl apply -f k8s/shredder-pvc.yaml -n cassandra
-  
-      # Deploy remaining resources to EKS
-      - name: Deploy to EKS
-        run: |
-          kubectl apply -f k8s/ -n shredder
-  
+    - name: Update kubeconfig for EKS
+      run: |
+        # Update the kubeconfig file to access the EKS cluster
+        aws eks update-kubeconfig --name ${{ secrets.EKS_CLUSTER_NAME }} --region ${{ secrets.AWS_REGION }} --kubeconfig ./kubeconfig.yml
+        echo "KUBECONFIG=$(pwd)/kubeconfig.yml" >> $GITHUB_ENV
+
+    - name: Apply namespace for EKS
+      run: kubectl apply -f k8s/namespace.yaml -n ${{ secrets.K8S_NAMESPACE }}
+
+    - name: Create or update db-secret for PostgreSQL
+      run: |
+        # Create or update the db-secret in the specified namespace for PostgreSQL credentials
+        kubectl apply -f - <<EOF
+        apiVersion: v1
+        kind: Secret
+        metadata:
+          name: db-secret
+          namespace: ${{ secrets.K8S_NAMESPACE }}
+        type: Opaque
+        data:
+          POSTGRES_USER: $(echo -n "${{ secrets.DB_USER }}" | base64)
+          POSTGRES_PASSWORD: $(echo -n "${{ secrets.DB_PASSWORD }}" | base64)
+        EOF
+
+    - name: Deploy backend to Kubernetes
+      run: |
+        # Deploy all resources in the k8s directory to the Kubernetes cluster
+        kubectl apply -f k8s/ -n ${{ secrets.K8S_NAMESPACE }} --exclude k8s/namespace.yml
