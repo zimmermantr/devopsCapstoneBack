@@ -1,0 +1,106 @@
+# ci-cd.yml (Backend)
+name: Backend CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
+
+  AWS_REGION: 'us-east-1'
+  K8S_NAMESPACE: 'shredder'
+  EKS_CLUSTER_NAME: 'your-eks-cluster' # FILL IN WITH PROPER NAME THROUGHOUT ENTIRE CODE
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build and push backend Docker image
+      run: |
+        docker build -t ${{ env.DOCKER_USERNAME }}/shredder_back:latest .
+        docker push ${{ env.DOCKER_USERNAME }}/shredder_back:latest
+
+  deploy_eks:
+    needs: build and push
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with: 
+          ref: main
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}  # USING WHO'S INFO?  CAN USE MINE
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Update kubeconfig for EKS
+        run: |
+          aws eks update-kubeconfig --name your-eks-cluster --kubeconfig ./kubeconfig.yml  
+          echo "KUBECONFIG=$(pwd)/kubeconfig.yml" >> $GITHUB_ENV
+  
+      # Apply namespace first before creating any resources
+      - name: Apply namespace for EKS
+        run: kubectl apply -f k8s/shredder-name.yaml
+  
+      # Create db-secret for PostgreSQL in Kubernetes
+      - name: Create or update db-secret for PostgreSQL
+        run: |
+          kubectl apply -f - <<EOF
+          apiVersion: v1
+          kind: Secret
+          metadata:
+            name: db-secret
+            namespace: shredder
+          type: Opaque
+          data:
+            POSTGRES_USER: $(echo -n "${{ secrets.DB_USER }}" | base64)
+            POSTGRES_PASSWORD: $(echo -n "${{ secrets.DB_PASSWORD }}" | base64)
+          EOF
+  
+      # Create or update twoge-secrets for Twoge App in Kubernetes
+      - name: Create or update shredder-secrets for Shredder App
+        run: |
+          kubectl apply -f - <<EOF
+          apiVersion: v1
+          kind: Secret
+          metadata:
+            name: shredder-secrets
+            namespace: shredder
+          type: Opaque
+          data:
+            DB_USER: $(echo -n "${{ secrets.DB_USER }}" | base64)
+            DB_PASSWORD: $(echo -n "${{ secrets.DB_PASSWORD }}" | base64)
+          EOF
+  
+      # Apply StorageClass for EKS
+      - name: Apply StorageClass for EKS
+        run: kubectl apply -f k8s/shredder-storageclass.yaml -n cassandra # ADDED DURING ASSESSMENT TO SEE IF RESOLVED PVC ISSUES
+  
+      # Apply PersistentVolumeClaim (PVC) for postgres
+      - name: Apply postgres PVC
+        run: kubectl apply -f k8s/shredder-pvc.yaml -n cassandra
+  
+      # Deploy remaining resources to EKS
+      - name: Deploy to EKS
+        run: |
+          kubectl apply -f k8s/ -n shredder
+  
