@@ -5,40 +5,16 @@ on:
   push:
     branches: [ main ]
 
-
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
   AWS_REGION: ${{ secrets.AWS_REGION }}
   K8S_NAMESPACE: ${{ secrets.K8S_NAMESPACE }}
   EKS_CLUSTER_NAME: ${{ secrets.EKS_CLUSTER_NAME }}
-  # AWS_REGION: 'us-east-1' #CHANGE THESE TO SECRETS AFTER CONFIRMING THAT THEY WORK
-  # K8S_NAMESPACE: 'shredder' #CHANGE THESE TO SECRETS AFTER CONFIRMING THAT THEY WORK
-  # EKS_CLUSTER_NAME: 'shredder_cluster' #CHANGE THESE TO SECRETS AFTER CONFIRMING THAT THEY WORK
-  
+
 jobs:
   backend-test:
     runs-on: ubuntu-latest
-
-    services:
-      postgres:
-        image: postgres:13
-        env:
-          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
-          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_DB }}
-          POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
-          POSTGRES_PORT:  ${{ secrets.POSTGRES_PORT }}
-          # POSTGRES_USER: postgres
-          # POSTGRES_PASSWORD: postgres
-          # POSTGRES_DB: mydb
-        ports:
-          # - 5432:5432
-          POSTGRES_PORT:  ${{ secrets.POSTGRES_PORT }}
-        options: >-
-          --health-cmd "pg_isready -U postgres"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
 
     steps:
     - name: Checkout code
