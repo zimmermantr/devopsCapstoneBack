@@ -1610,7 +1610,7 @@
     {
         "model": "workout_program_app.Workout_Program_workouts",
         "fields": {
-            "workout_program": 5,
+            "workout_program": 4,
             "workout": 13
         }
     },

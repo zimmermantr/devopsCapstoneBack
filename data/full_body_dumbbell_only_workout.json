@@ -6,7 +6,8 @@
         "program_details": "full body dumbbell only workout",
         "program_difficulty": "beginner",
         "program_duration": "8 weeks",
-        "frequency_per_week": 3
+        "frequency_per_week": 3,
+        "created_by": 1
     }
 },
 {
