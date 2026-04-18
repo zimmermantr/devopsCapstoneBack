@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:latest AS builder
 
 WORKDIR /app
 
@@ -6,6 +6,12 @@ COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app/
+
+FROM python:alpine
+
+WORKDIR /app
+
+COPY --from=builder /app /app
 
 EXPOSE 8000
 
